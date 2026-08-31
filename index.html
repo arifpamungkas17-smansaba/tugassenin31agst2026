@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluasi Sejarah Kelas X - Metode, Sumber & Fakta Sejarah</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #3b82f6;
+            --secondary: #0f172a;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #334155;
+            --border: #e2e8f0;
+            --success: #16a34a;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+        }
+
+        header h1 { margin: 0 0 0.5rem 0; font-size: 1.8rem; }
+        header p { margin: 0; opacity: 0.9; font-size: 0.95rem; }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .student-info {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            margin-bottom: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .input-group { display: flex; flex-direction: column; }
+        .input-group label { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.25rem; color: var(--secondary); }
+        .input-group input { padding: 0.5rem; border: 1px solid var(--border); border-radius: 4px; }
+
+        .section-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .section-header { border-bottom: 2px solid var(--primary-light); padding-bottom: 0.5rem; margin-bottom: 1.5rem; }
+        .section-title { color: var(--primary); margin: 0; font-size: 1.3rem; }
+
+        .instructions {
+            background-color: #eff6ff;
+            border-left: 4px solid var(--primary-light);
+            padding: 0.75rem 1rem;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .question-item { margin-bottom: 1.75rem; padding-bottom: 1.25rem; border-bottom: 1px dashed var(--border); }
+        .question-item:last-child { border-bottom: none; margin-bottom: 0; }
+        .question-text { font-weight: 600; margin-bottom: 0.75rem; color: var(--secondary); }
+
+        .options { list-style: none; padding: 0; margin: 0; }
+        .options li { margin-bottom: 0.5rem; }
+        .options label { display: flex; align-items: center; padding: 0.5rem 0.75rem; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+        .options label:hover { background-color: #f1f5f9; }
+        .options input { margin-right: 0.75rem; }
+
+        .matching-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        .matching-table th, .matching-table td { border: 1px solid var(--border); padding: 0.75rem; text-align: left; vertical-align: top; }
+        .matching-table th { background-color: #f1f5f9; }
+
+        .matching-select { width: 100%; padding: 0.4rem; border-radius: 4px; border: 1px solid var(--border); }
+        textarea { width: 100%; min-height: 100px; padding: 0.75rem; border: 1px solid var(--border); border-radius: 6px; box-sizing: border-box; }
+
+        .btn-submit {
+            display: block; width: 100%; background-color: var(--primary); color: white; border: none; padding: 1rem; font-size: 1.1rem; font-weight: 600; border-radius: 8px; cursor: pointer;
+        }
+        .btn-submit:hover { background-color: #1d4ed8; }
+
+        .key-section {
+            display: none; margin-top: 2rem; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 1.5rem 2rem;
+        }
+        .key-title { color: var(--success); margin-top: 0; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>EVALUASI SEJARAH KELAS X</h1>
+    <p>Materi: Metode Penelitian Sejarah, Sumber Sejarah, dan Fakta Sejarah</p>
+</header>
+
+<div class="container">
+    <div class="student-info">
+        <div class="input-group">
+            <label for="nama">Nama Lengkap</label>
+            <input type="text" id="nama" placeholder="Masukkan nama...">
+        </div>
+        <div class="input-group">
+            <label for="kelas">Kelas / Rombel</label>
+            <input type="text" id="kelas" placeholder="Contoh: X-1">
+        </div>
+        <div class="input-group">
+            <label for="nis">NIS / NISN</label>
+            <input type="text" id="nis" placeholder="Masukkan NIS...">
+        </div>
+    </div>
+
+    <!-- BAGIAN A -->
+    <div class="section-card">
+        <div class="section-header"><h2 class="section-title">BAGIAN A: PILIHAN GANDA</h2></div>
+        <div class="instructions">Pilihlah satu jawaban yang paling tepat (A, B, C, D, atau E)!</div>
+
+        <div class="question-item">
+            <div class="question-text">1. Urutan tahapan penelitian sejarah yang sistematis dan benar adalah...</div>
+            <ul class="options">
+                <li><label><input type="radio" name="pg1" value="A"> A. Historiografi – Heuristik – Kritik – Interpretasi</label></li>
+                <li><label><input type="radio" name="pg1" value="B"> B. Heuristik – Kritik – Interpretasi – Historiografi</label></li>
+                <li><label><input type="radio" name="pg1" value="C"> C. Kritik – Heuristik – Interpretasi – Historiografi</label></li>
+                <li><label><input type="radio" name="pg1" value="D"> D. Interpretasi – Heuristik – Kritik – Historiografi</label></li>
+                <li><label><input type="radio" name="pg1" value="E"> E. Heuristik – Interpretasi – Kritik – Historiografi</label></li>
+            </ul>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">2. Seorang peneliti sejarah menemukan naskah kuno beraksara Jawa. Ia kemudian memeriksa keaslian kertas, jenis tinta, dan gaya bahasa yang digunakan pada masa tersebut. Proses yang dilakukan peneliti tersebut termasuk dalam tahapan...</div>
+            <ul class="options">
+                <li><label><input type="radio" name="pg2" value="A"> A. Heuristik</label></li>
+                <li><label><input type="radio" name="pg2" value="B"> B. Kritik Internal</label></li>
+                <li><label><input type="radio" name="pg2" value="C"> C. Kritik Eksternal</label></li>
+                <li><label><input type="radio" name="pg2" value="D"> D. Interpretasi Sintesis</label></li>
+                <li><label><input type="radio" name="pg2" value="E"> E. Historiografi</label></li>
+            </ul>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">3. Di bawah ini yang merupakan contoh dari sumber primer adalah...</div>
+            <ul class="options">
+                <li><label><input type="radio" name="pg3" value="A"> A. Buku teks pelajaran sejarah tulisan sejarawan terkenal</label></li>
+                <li><label><input type="radio" name="pg3" value="B"> B. Artikel riset sejarah yang dimuat di jurnal internasional</label></li>
+                <li><label><input type="radio" name="pg3" value="C"> C. Dokumen asli Perjanjian Linggarjati tahun 1947</label></li>
+                <li><label><input type="radio" name="pg3" value="D"> D. Film dokumenter buatan tahun 2020 tentang Proklamasi</label></li>
+                <li><label><input type="radio" name="pg3" value="E"> E. Biografi Soekarno yang ditulis oleh penulis kontemporer</label></li>
+            </ul>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">4. Benda-benda peninggalan masa lalu seperti fosil, peralatan batu, dan artefak dapat memberikan gambaran kehidupan masa lalu. Namun, benda tersebut termasuk sumber bisu (mute sources). Agar dapat menyajikan fakta sejarah, peneliti harus...</div>
+            <ul class="options">
+                <li><label><input type="radio" name="pg4" value="A"> A. Menganggap benda tersebut sebagai satu-satunya kebenaran mutlak</label></li>
+                <li><label><input type="radio" name="pg4" value="B"> B. Menolak penggunaan artefak jika tidak ada catatan tertulisnya</label></li>
+                <li><label><input type="radio" name="pg4" value="C"> C. Mengaitkan dan membandingkannya dengan ilmu bantu seperti arkeologi dan epigrafi</label></li>
+                <li><label><input type="radio" name="pg4" value="D"> D. Mengubah bentuk artefak agar sesuai dengan narasi sejarah yang diinginkan</label></li>
+                <li><label><input type="radio" name="pg4" value="E"> E. Mengesampingkan kritik sumber karena benda fisik tidak bisa berbohong</label></li>
+            </ul>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">5. Perhatikan dua sudut pandang berikut:<br>
+            <i>Teks A (Laporan Pemerintah Kolonial):</i> Menyebutkan bahwa gerakan Pangeran Diponegoro adalah bentuk pemberontakan yang merusak ketertiban umum.<br>
+            <i>Teks B (Catatan Pengikut Diponegoro):</i> Menyebutkan bahwa Perang Jawa adalah perjuangan suci menentang penjajahan dan ketidakadilan.<br>
+            Perbedaan narasi di atas terjadi karena adanya perbedaan...</div>
+            <ul class="options">
+                <li><label><input type="radio" name="pg5" value="A"> A. Kelengkapan instrumen fisik naskah</label></li>
+                <li><label><input type="radio" name="pg5" value="B"> B. Jenis tinta yang digunakan saat menulis</label></li>
+                <li><label><input type="radio" name="pg5" value="C"> C. Sudut pandang (subjektivitas) dan kepentingan penulis sumber</label></li>
+                <li><label><input type="radio" name="pg5" value="D"> D. Metode heuristik yang digunakan para pihak</label></li>
+                <li><label><input type="radio" name="pg5" value="E"> E. Keaslian dokumen yang digunakan kedua belah pihak</label></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- BAGIAN B -->
+    <div class="section-card">
+        <div class="section-header"><h2 class="section-title">BAGIAN B: SOAL SEBAB-AKIBAT</h2></div>
+        <div class="instructions">
+            <strong>Petunjuk Pengerjaan:</strong><br>
+            A. Pernyataan BENAR, alasan BENAR, dan keduanya menunjukkan hubungan SEBAB-AKIBAT.<br>
+            B. Pernyataan BENAR, alasan BENAR, tetapi keduanya TIDAK menunjukkan hubungan SEBAB-AKIBAT.<br>
+            C. Pernyataan BENAR dan alasan SALAH.<br>
+            D. Pernyataan SALAH dan alasan BENAR.<br>
+            E. Pernyataan dan alasan KEDUANYA SALAH.
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">1. Pernyataan: Tahapan heuristik merupakan langkah paling awal dalam penelitian sejarah.<br>
+            Alasan: Peneliti tidak dapat melakukan rekonstruksi masa lalu tanpa adanya sumber-sumber sejarah yang dikumpulkan.</div>
+            <select class="matching-select" name="sa1">
+                <option value="">-- Pilih Jawaban --</option>
+                <option value="A">A - Benar, Benar, Berhubungan</option>
+                <option value="B">B - Benar, Benar, Tidak Berhubungan</option>
+                <option value="C">C - Benar, Salah</option>
+                <option value="D">D - Salah, Benar</option>
+                <option value="E">E - Salah, Salah</option>
+            </select>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">2. Pernyataan: Kritik eksternal bertujuan untuk menguji kredibilitas atau tingkat kebenaran isi dari sebuah dokumen sejarah.<br>
+            Alasan: Kebenaran isi sebuah dokumen dipengaruhi oleh kejujuran dan subjektivitas penulisnya.</div>
+            <select class="matching-select" name="sa2">
+                <option value="">-- Pilih Jawaban --</option>
+                <option value="A">A - Benar, Benar, Berhubungan</option>
+                <option value="B">B - Benar, Benar, Tidak Berhubungan</option>
+                <option value="C">C - Benar, Salah</option>
+                <option value="D">D - Salah, Benar</option>
+                <option value="E">E - Salah, Salah</option>
+            </select>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">3. Pernyataan: Wawancara dengan veteran perang dapat dikategorikan sebagai sumber lisan primer.<br>
+            Alasan: Veteran perang tersebut terlibat langsung atau menyaksikan secara fisik peristiwa sejarah yang dialaminya.</div>
+            <select class="matching-select" name="sa3">
+                <option value="">-- Pilih Jawaban --</option>
+                <option value="A">A - Benar, Benar, Berhubungan</option>
+                <option value="B">B - Benar, Benar, Tidak Berhubungan</option>
+                <option value="C">C - Benar, Salah</option>
+                <option value="D">D - Salah, Benar</option>
+                <option value="E">E - Salah, Salah</option>
+            </select>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">4. Pernyataan: Fakta sejarah bersifat mutlak, abadi, dan tidak akan pernah mengalami perubahan atau revisi.<br>
+            Alasan: Fakta sejarah disusun berdasarkan bukti-bukti yang tidak bisa diganggu gugat.</div>
+            <select class="matching-select" name="sa4">
+                <option value="">-- Pilih Jawaban --</option>
+                <option value="A">A - Benar, Benar, Berhubungan</option>
+                <option value="B">B - Benar, Benar, Tidak Berhubungan</option>
+                <option value="C">C - Benar, Salah</option>
+                <option value="D">D - Salah, Benar</option>
+                <option value="E">E - Salah, Salah</option>
+            </select>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">5. Pernyataan: Interpretasi sejarah sering kali melahirkan penafsiran yang berbeda-beda atas satu peristiwa yang sama.<br>
+            Alasan: Proses interpretasi sangat dipengaruhi oleh latar belakang keilmuan, kerangka berpikir, dan sudut pandang sejarawan.</div>
+            <select class="matching-select" name="sa5">
+                <option value="">-- Pilih Jawaban --</option>
+                <option value="A">A - Benar, Benar, Berhubungan</option>
+                <option value="B">B - Benar, Benar, Tidak Berhubungan</option>
+                <option value="C">C - Benar, Salah</option>
+                <option value="D">D - Salah, Benar</option>
+                <option value="E">E - Salah, Salah</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- BAGIAN C -->
+    <div class="section-card">
+        <div class="section-header"><h2 class="section-title">BAGIAN C: MENJODOHKAN</h2></div>
+        <div class="instructions">Jodohkan istilah/konsep di Kolom A dengan deskripsi/penjelasan yang tepat di Kolom B!</div>
+
+        <table class="matching-table">
+            <thead>
+                <tr>
+                    <th style="width: 5%;">No</th>
+                    <th style="width: 30%;">Kolom A (Istilah)</th>
+                    <th style="width: 20%;">Pilihan Pasangan</th>
+                    <th style="width: 45%;">Kolom B (Deskripsi / Contoh)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><strong>Heuristik</strong></td>
+                    <td>
+                        <select class="matching-select" name="m1">
+                            <option value="">-- Pilih --</option>
+                            <option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option>
+                        </select>
+                    </td>
+                    <td>A. Pengujian terhadap kredibilitas dan kebenaran isi dari sebuah sumber sejarah.</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><strong>Kritik Internal</strong></td>
+                    <td>
+                        <select class="matching-select" name="m2">
+                            <option value="">-- Pilih --</option>
+                            <option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option>
+                        </select>
+                    </td>
+                    <td>B. Fakta yang masih membutuhkan bukti tambahan karena masih berupa dugaan atau opini.</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><strong>Fakta Keras (Hard Facts)</strong></td>
+                    <td>
+                        <select class="matching-select" name="m3">
+                            <option value="">-- Pilih --</option>
+                            <option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option>
+                        </select>
+                    </td>
+                    <td>C. Kegiatan mengumpulkan dan menemukan sumber-sumber sejarah yang relevan.</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><strong>Fakta Lunak (Soft Facts)</strong></td>
+                    <td>
+                        <select class="matching-select" name="m4">
+                            <option value="">-- Pilih --</option>
+                            <option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option>
+                        </select>
+                    </td>
+                    <td>D. Kesaksian dari saksi mata yang hadir langsung saat peristiwa sejarah berlangsung.</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td><strong>Sumber Primer</strong></td>
+                    <td>
+                        <select class="matching-select" name="m5">
+                            <option value="">-- Pilih --</option>
+                            <option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option>
+                        </select>
+                    </td>
+                    <td>E. Fakta sejarah yang sudah teruji kebenarannya secara umum dan tidak diperdebatkan lagi (contoh: Proklamasi RI tanggal 17 Agustus 1945).</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- BAGIAN D -->
+    <div class="section-card">
+        <div class="section-header"><h2 class="section-title">BAGIAN D: URAIAN / ESSAY</h2></div>
+        <div class="instructions">Jawablah pertanyaan-pertanyaan berikut dengan jelas dan logis!</div>
+
+        <div class="question-item">
+            <div class="question-text">1. Jelaskan perbedaan mendasar antara sumber primer dan sumber sekunder! Berikan masing-masing 2 contoh konkretnya!</div>
+            <textarea placeholder="Ketik jawaban Anda di sini..."></textarea>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">2. Mengapa seorang peneliti sejarah wajib melakukan kritik sumber (baik eksternal maupun internal) sebelum menggunakan informasi dari sumber tersebut? Apa risikonya jika kritik sumber diabaikan?</div>
+            <textarea placeholder="Ketik jawaban Anda di sini..."></textarea>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">3. Jelaskan perbedaan antara "Fakta Sejarah" dan "Opini"! Mengapa fakta sejarah tidak sama dengan peristiwa sejarah itu sendiri?</div>
+            <textarea placeholder="Ketik jawaban Anda di sini..."></textarea>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">4. Seorang sejarawan menemukan dua surat kabar dari tahun 1948 dengan berita yang berbeda mengenai Peristiwa Madiun 1948. Surat kabar milik pemerintah menggambarkan peristiwa tersebut sebagai pemberontakan, sedangkan surat kabar kiri menganggapnya sebagai bentuk pertahanan diri.<br><br>
+            <strong>Analisis:</strong> Bagaimana sejarawan dapat menyimpulkan fakta sejarah objektif dari dua sumber yang saling bertolak belakang tersebut?</div>
+            <textarea placeholder="Ketik jawaban Anda di sini..."></textarea>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">5. Banyak legenda masyarakat lokal (seperti cerita asal-usul nama suatu daerah) disampaikan secara turun-temurun melalui sumber lisan.<br><br>
+            <strong>Analisis:</strong> Bagaimana langkah-langkah metodologi penelitian sejarah yang harus dilakukan agar cerita rakyat/legenda tersebut dapat diuji validitasnya sehingga diketahui mana yang fakta dan mana yang sekadar mitos?</div>
+            <textarea placeholder="Ketik jawaban Anda di sini..."></textarea>
+        </div>
+    </div>
+
+    <button class="btn-submit" onclick="toggleAnswers()">Tampilkan Kunci Jawaban & Pembahasan</button>
+
+    <!-- KUNCI JAWABAN -->
+    <div class="key-section" id="keySection">
+        <h2 class="key-title">KUNCI JAWABAN & PEMBAHASAN</h2>
+        
+        <h3>BAGIAN A: PILIHAN GANDA</h3>
+        <ol>
+            <li><strong>B</strong> - Urutan: Heuristik → Kritik → Interpretasi → Historiografi.</li>
+            <li><strong>C</strong> - Pengujian keaslian fisik (kertas, tinta, gaya bahasa) adalah Kritik Eksternal.</li>
+            <li><strong>C</strong> - Dokumen asli Perjanjian Linggarjati 1947 adalah sumber primer.</li>
+            <li><strong>C</strong> - Menggunakan ilmu bantu seperti arkeologi & epigrafi untuk menganalisis sumber bisu.</li>
+            <li><strong>C</strong> - Disebabkan perbedaan sudut pandang (subjektivitas) dan kepentingan penulis.</li>
+        </ol>
+
+        <h3>BAGIAN B: SOAL SEBAB-AKIBAT</h3>
+        <ol>
+            <li><strong>A</strong> - Pernyataan BENAR, Alasan BENAR, saling berhubungan.</li>
+            <li><strong>D</strong> - Pernyataan SALAH (menguji isi adalah kritik internal), Alasan BENAR.</li>
+            <li><strong>A</strong> - Pernyataan BENAR, Alasan BENAR, saling berhubungan.</li>
+            <li><strong>E</strong> - Pernyataan SALAH (fakta bisa direvisi), Alasan SALAH.</li>
+            <li><strong>A</strong> - Pernyataan BENAR, Alasan BENAR, saling berhubungan.</li>
+        </ol>
+
+        <h3>BAGIAN C: MENJODOHKAN</h3>
+        <ul>
+            <li>1. Heuristik ➔ <strong>C</strong></li>
+            <li>2. Kritik Internal ➔ <strong>A</strong></li>
+            <li>3. Fakta Keras ➔ <strong>E</strong></li>
+            <li>4. Fakta Lunak ➔ <strong>B</strong></li>
+            <li>5. Sumber Primer ➔ <strong>D</strong></li>
+        </ul>
+
+        <h3>BAGIAN D: URAIAN / ESSAY</h3>
+        <ol>
+            <li><strong>Sumber Primer vs Sekunder:</strong> Primer berasal dari pelaku/saksi (Contoh: Naskah Proklamasi asli, foto masa lalu). Sekunder adalah hasil olahan (Contoh: Buku teks, artikel analisis).</li>
+            <li><strong>Pentingnya Kritik:</strong> Menguji otentisitas dan kredibilitas. Tanpa kritik, sejarah berisiko menjadi mitos atau penulisan yang bias/palsu.</li>
+            <li><strong>Fakta vs Opini vs Peristiwa:</strong> Peristiwa adalah kejadian nyata di masa lalu. Fakta adalah pembuktian ilmiah atas peristiwa. Opini adalah penafsiran tanpa bukti kuat.</li>
+            <li><strong>Analisis 2 Sumber Berlawanan:</strong> Lakukan koroborasi (silang sumber), analisis motif ideologi penulis, cari sumber pihak ketiga yang netral, dan ambil kesamaan data dasar (hard facts).</li>
+            <li><strong>Uji Validitas Legenda:</strong> Lakukan wawancara mendalam, kritik sumber lisan, bandingkan dengan bukti artefak/dokumen tertulis zaman terkait, serta lakukan analisis konteks sosial-budaya.</li>
+        </ol>
+    </div>
+</div>
+
+<script>
+function toggleAnswers() {
+    var key = document.getElementById("keySection");
+    if (key.style.display === "none" || key.style.display === "") {
+        key.style.display = "block";
+        window.scrollTo({ top: key.offsetTop - 20, behavior: 'smooth' });
+    } else {
+        key.style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>
