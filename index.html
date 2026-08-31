@@ -13,11 +13,10 @@
             --card-bg: #ffffff;
             --text: #334155;
             --border: #e2e8f0;
-            --success: #16a34a;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg);
             color: var(--text);
             line-height: 1.6;
@@ -30,10 +29,19 @@
             color: white;
             padding: 2.5rem 1.5rem;
             text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
         }
 
-        header h1 { margin: 0 0 0.5rem 0; font-size: 1.8rem; }
-        header p { margin: 0; opacity: 0.9; font-size: 0.95rem; }
+        header h1 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.8rem;
+        }
+
+        header p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
 
         .container {
             max-width: 900px;
@@ -52,9 +60,24 @@
             gap: 1rem;
         }
 
-        .input-group { display: flex; flex-direction: column; }
-        .input-group label { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.25rem; color: var(--secondary); }
-        .input-group input { padding: 0.5rem; border: 1px solid var(--border); border-radius: 4px; }
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-group label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: var(--secondary);
+        }
+
+        .input-group input {
+            padding: 0.5rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
 
         .section-card {
             background: var(--card-bg);
@@ -65,8 +88,17 @@
             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
 
-        .section-header { border-bottom: 2px solid var(--primary-light); padding-bottom: 0.5rem; margin-bottom: 1.5rem; }
-        .section-title { color: var(--primary); margin: 0; font-size: 1.3rem; }
+        .section-header {
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title {
+            color: var(--primary);
+            margin: 0;
+            font-size: 1.3rem;
+        }
 
         .instructions {
             background-color: #eff6ff;
@@ -74,34 +106,98 @@
             padding: 0.75rem 1rem;
             font-size: 0.9rem;
             margin-bottom: 1.5rem;
+            border-radius: 0 4px 4px 0;
         }
 
-        .question-item { margin-bottom: 1.75rem; padding-bottom: 1.25rem; border-bottom: 1px dashed var(--border); }
-        .question-item:last-child { border-bottom: none; margin-bottom: 0; }
-        .question-text { font-weight: 600; margin-bottom: 0.75rem; color: var(--secondary); }
-
-        .options { list-style: none; padding: 0; margin: 0; }
-        .options li { margin-bottom: 0.5rem; }
-        .options label { display: flex; align-items: center; padding: 0.5rem 0.75rem; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
-        .options label:hover { background-color: #f1f5f9; }
-        .options input { margin-right: 0.75rem; }
-
-        .matching-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
-        .matching-table th, .matching-table td { border: 1px solid var(--border); padding: 0.75rem; text-align: left; vertical-align: top; }
-        .matching-table th { background-color: #f1f5f9; }
-
-        .matching-select { width: 100%; padding: 0.4rem; border-radius: 4px; border: 1px solid var(--border); }
-        textarea { width: 100%; min-height: 100px; padding: 0.75rem; border: 1px solid var(--border); border-radius: 6px; box-sizing: border-box; }
-
-        .btn-submit {
-            display: block; width: 100%; background-color: var(--primary); color: white; border: none; padding: 1rem; font-size: 1.1rem; font-weight: 600; border-radius: 8px; cursor: pointer;
+        .question-item {
+            margin-bottom: 1.75rem;
+            padding-bottom: 1.25rem;
+            border-bottom: 1px dashed var(--border);
         }
-        .btn-submit:hover { background-color: #1d4ed8; }
 
-        .key-section {
-            display: none; margin-top: 2rem; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 1.5rem 2rem;
+        .question-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
         }
-        .key-title { color: var(--success); margin-top: 0; }
+
+        .question-text {
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--secondary);
+        }
+
+        /* Options for Multiple Choice */
+        .options {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .options li {
+            margin-bottom: 0.5rem;
+        }
+
+        .options label {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .options label:hover {
+            background-color: #f1f5f9;
+        }
+
+        .options input {
+            margin-right: 0.75rem;
+        }
+
+        /* Matching Questions */
+        .matching-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .matching-table th, .matching-table td {
+            border: 1px solid var(--border);
+            padding: 0.75rem;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .matching-table th {
+            background-color: #f1f5f9;
+            color: var(--secondary);
+        }
+
+        .matching-select {
+            width: 100%;
+            padding: 0.4rem;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+        }
+
+        /* Textarea for Essay */
+        textarea {
+            width: 100%;
+            min-height: 100px;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-family: inherit;
+            resize: vertical;
+            box-sizing: border-box;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 0 0.5rem; }
+            .section-card { padding: 1rem; }
+        }
     </style>
 </head>
 <body>
@@ -112,6 +208,7 @@
 </header>
 
 <div class="container">
+    <!-- DATA SISWA -->
     <div class="student-info">
         <div class="input-group">
             <label for="nama">Nama Lengkap</label>
@@ -127,10 +224,14 @@
         </div>
     </div>
 
-    <!-- BAGIAN A -->
+    <!-- BAGIAN A: PILIHAN GANDA -->
     <div class="section-card">
-        <div class="section-header"><h2 class="section-title">BAGIAN A: PILIHAN GANDA</h2></div>
-        <div class="instructions">Pilihlah satu jawaban yang paling tepat (A, B, C, D, atau E)!</div>
+        <div class="section-header">
+            <h2 class="section-title">BAGIAN A: PILIHAN GANDA</h2>
+        </div>
+        <div class="instructions">
+            Pilihlah satu jawaban yang paling tepat (A, B, C, D, atau E)!
+        </div>
 
         <div class="question-item">
             <div class="question-text">1. Urutan tahapan penelitian sejarah yang sistematis dan benar adalah...</div>
@@ -191,9 +292,11 @@
         </div>
     </div>
 
-    <!-- BAGIAN B -->
+    <!-- BAGIAN B: SOAL SEBAB-AKIBAT -->
     <div class="section-card">
-        <div class="section-header"><h2 class="section-title">BAGIAN B: SOAL SEBAB-AKIBAT</h2></div>
+        <div class="section-header">
+            <h2 class="section-title">BAGIAN B: SOAL SEBAB-AKIBAT</h2>
+        </div>
         <div class="instructions">
             <strong>Petunjuk Pengerjaan:</strong><br>
             A. Pernyataan BENAR, alasan BENAR, dan keduanya menunjukkan hubungan SEBAB-AKIBAT.<br>
@@ -269,10 +372,14 @@
         </div>
     </div>
 
-    <!-- BAGIAN C -->
+    <!-- BAGIAN C: MENJODOHKAN -->
     <div class="section-card">
-        <div class="section-header"><h2 class="section-title">BAGIAN C: MENJODOHKAN</h2></div>
-        <div class="instructions">Jodohkan istilah/konsep di Kolom A dengan deskripsi/penjelasan yang tepat di Kolom B!</div>
+        <div class="section-header">
+            <h2 class="section-title">BAGIAN C: MENJODOHKAN</h2>
+        </div>
+        <div class="instructions">
+            Jodohkan istilah/konsep di Kolom A dengan deskripsi/penjelasan yang tepat di Kolom B!
+        </div>
 
         <table class="matching-table">
             <thead>
@@ -343,10 +450,14 @@
         </table>
     </div>
 
-    <!-- BAGIAN D -->
+    <!-- BAGIAN D: URAIAN / ESSAY -->
     <div class="section-card">
-        <div class="section-header"><h2 class="section-title">BAGIAN D: URAIAN / ESSAY</h2></div>
-        <div class="instructions">Jawablah pertanyaan-pertanyaan berikut dengan jelas dan logis!</div>
+        <div class="section-header">
+            <h2 class="section-title">BAGIAN D: URAIAN / ESSAY</h2>
+        </div>
+        <div class="instructions">
+            Jawablah pertanyaan-pertanyaan berikut dengan jelas dan logis!
+        </div>
 
         <div class="question-item">
             <div class="question-text">1. Jelaskan perbedaan mendasar antara sumber primer dan sumber sekunder! Berikan masing-masing 2 contoh konkretnya!</div>
@@ -375,62 +486,7 @@
             <textarea placeholder="Ketik jawaban Anda di sini..."></textarea>
         </div>
     </div>
-
-    <button class="btn-submit" onclick="toggleAnswers()">Tampilkan Kunci Jawaban & Pembahasan</button>
-
-    <!-- KUNCI JAWABAN -->
-    <div class="key-section" id="keySection">
-        <h2 class="key-title">KUNCI JAWABAN & PEMBAHASAN</h2>
-        
-        <h3>BAGIAN A: PILIHAN GANDA</h3>
-        <ol>
-            <li><strong>B</strong> - Urutan: Heuristik → Kritik → Interpretasi → Historiografi.</li>
-            <li><strong>C</strong> - Pengujian keaslian fisik (kertas, tinta, gaya bahasa) adalah Kritik Eksternal.</li>
-            <li><strong>C</strong> - Dokumen asli Perjanjian Linggarjati 1947 adalah sumber primer.</li>
-            <li><strong>C</strong> - Menggunakan ilmu bantu seperti arkeologi & epigrafi untuk menganalisis sumber bisu.</li>
-            <li><strong>C</strong> - Disebabkan perbedaan sudut pandang (subjektivitas) dan kepentingan penulis.</li>
-        </ol>
-
-        <h3>BAGIAN B: SOAL SEBAB-AKIBAT</h3>
-        <ol>
-            <li><strong>A</strong> - Pernyataan BENAR, Alasan BENAR, saling berhubungan.</li>
-            <li><strong>D</strong> - Pernyataan SALAH (menguji isi adalah kritik internal), Alasan BENAR.</li>
-            <li><strong>A</strong> - Pernyataan BENAR, Alasan BENAR, saling berhubungan.</li>
-            <li><strong>E</strong> - Pernyataan SALAH (fakta bisa direvisi), Alasan SALAH.</li>
-            <li><strong>A</strong> - Pernyataan BENAR, Alasan BENAR, saling berhubungan.</li>
-        </ol>
-
-        <h3>BAGIAN C: MENJODOHKAN</h3>
-        <ul>
-            <li>1. Heuristik ➔ <strong>C</strong></li>
-            <li>2. Kritik Internal ➔ <strong>A</strong></li>
-            <li>3. Fakta Keras ➔ <strong>E</strong></li>
-            <li>4. Fakta Lunak ➔ <strong>B</strong></li>
-            <li>5. Sumber Primer ➔ <strong>D</strong></li>
-        </ul>
-
-        <h3>BAGIAN D: URAIAN / ESSAY</h3>
-        <ol>
-            <li><strong>Sumber Primer vs Sekunder:</strong> Primer berasal dari pelaku/saksi (Contoh: Naskah Proklamasi asli, foto masa lalu). Sekunder adalah hasil olahan (Contoh: Buku teks, artikel analisis).</li>
-            <li><strong>Pentingnya Kritik:</strong> Menguji otentisitas dan kredibilitas. Tanpa kritik, sejarah berisiko menjadi mitos atau penulisan yang bias/palsu.</li>
-            <li><strong>Fakta vs Opini vs Peristiwa:</strong> Peristiwa adalah kejadian nyata di masa lalu. Fakta adalah pembuktian ilmiah atas peristiwa. Opini adalah penafsiran tanpa bukti kuat.</li>
-            <li><strong>Analisis 2 Sumber Berlawanan:</strong> Lakukan koroborasi (silang sumber), analisis motif ideologi penulis, cari sumber pihak ketiga yang netral, dan ambil kesamaan data dasar (hard facts).</li>
-            <li><strong>Uji Validitas Legenda:</strong> Lakukan wawancara mendalam, kritik sumber lisan, bandingkan dengan bukti artefak/dokumen tertulis zaman terkait, serta lakukan analisis konteks sosial-budaya.</li>
-        </ol>
-    </div>
 </div>
-
-<script>
-function toggleAnswers() {
-    var key = document.getElementById("keySection");
-    if (key.style.display === "none" || key.style.display === "") {
-        key.style.display = "block";
-        window.scrollTo({ top: key.offsetTop - 20, behavior: 'smooth' });
-    } else {
-        key.style.display = "none";
-    }
-}
-</script>
 
 </body>
 </html>
